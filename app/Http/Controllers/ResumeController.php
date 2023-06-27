@@ -15,7 +15,6 @@ class ResumeController extends Controller
         return view('pages.resume');
     }
 
-
     public function resumeLink(Request $request)
     {
         return DB::table('resumes')->first();
@@ -83,4 +82,8 @@ class ResumeController extends Controller
     {
         //
     }
+
+
+
 }
+

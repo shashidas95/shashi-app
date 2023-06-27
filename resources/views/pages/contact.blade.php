@@ -1,1 +1,6 @@
-<h1> contact page</h1>
+@extends('layouts.app')
+@section('content')
+    @include('components.contact')
+ 
+@endsection
+

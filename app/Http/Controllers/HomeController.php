@@ -23,7 +23,7 @@ class HomeController extends Controller
     {
         return DB::table('abouts')->first();
     }
-    public function socilaData(Request $request)
+    public function socialData(Request $request)
     {
         return DB::table('socials')->first();
     }
