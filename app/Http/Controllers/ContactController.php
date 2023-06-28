@@ -16,7 +16,10 @@ class ContactController extends Controller
     }
     public function ContactRequest(Request $request)
     {
+       // sleep(5);
         return DB::table('contacts')->insert($request->input());
+        // $contacts = DB::table('contacts')->get();
+        // return $contacts;
     }
     /**
      * Show the form for creating a new resource.
