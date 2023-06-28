@@ -10,7 +10,7 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function page(Request $request)
     {
         return view('pages.project');
     }
@@ -24,7 +24,7 @@ class ProjectController extends Controller
      * Show the form for creating a new resource.
      */
 
-    
+
     public function create()
     {
     }

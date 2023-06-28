@@ -10,7 +10,7 @@ class ContactController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function page(Request $request)
     {
         return view('pages.contact');
     }

@@ -21,20 +21,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 //pages routes
-Route::get('/', [HomeController::class, 'index']);
-Route::post('/contact', [ContactController::class, 'index']);
-Route::get('/resume', [ResumeController::class, 'index']);
-Route::get('/projects', [ProjectController::class, 'index']);
+Route::get('/', [HomeController::class, 'page']);
+Route::get('/contact', [ContactController::class, 'page']);
+Route::get('/resume', [ResumeController::class, 'page']);
+Route::get('/projects', [ProjectController::class, 'page']);
 
 
 //Ajax call routes
 Route::get('/heroData', [HomeController::class, 'heroData']);
 Route::get('/aboutData', [HomeController::class, 'aboutData']);
 Route::get('/socialData', [HomeController::class, 'socialData']);
-Route::post('/contactRequest', [ContactController::class, 'contactRequest']);
+
 Route::get('/resumeLink', [ResumeController::class, 'resumeLink']);
 Route::get('/experiencesData', [ResumeController::class, 'experiencesData']);
 Route::get('/educationData', [ResumeController::class, 'educationData']);
 Route::get('/skillsData', [ResumeController::class, 'skillsData']);
 Route::get('/languageData', [ResumeController::class, 'languageData']);
 Route::get('/projectData', [ProjectController::class, 'projectData']);
+Route::post('/contactRequest', [ContactController::class, 'contactRequest']);
