@@ -17,6 +17,7 @@ class ProjectController extends Controller
 
     public function projectData(Request $request)
     {
+        sleep(5);
         return DB::table('projects')->get();
     }
 

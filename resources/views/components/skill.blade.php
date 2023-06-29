@@ -12,37 +12,14 @@
                               <div class="d-flex align-items-center mb-4">
                                   <div
                                       class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
-                                      <i class="bi bi-tools"></i></div>
+                                      <i class="bi bi-tools"></i>
+                                  </div>
                                   <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Professional
                                           Skills</span></h3>
                               </div>
-                              <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                  <div class="col mb-4 mb-md-0">
-                                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">SEO/SEM
-                                          Marketing</div>
-                                  </div>
-                                  <div class="col mb-4 mb-md-0">
-                                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Statistical
-                                          Analysis</div>
-                                  </div>
-                                  <div class="col">
-                                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Web
-                                          Development</div>
-                                  </div>
-                              </div>
-                              <div class="row row-cols-1 row-cols-md-3">
-                                  <div class="col mb-4 mb-md-0">
-                                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Network
-                                          Security</div>
-                                  </div>
-                                  <div class="col mb-4 mb-md-0">
-                                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Adobe Software
-                                          Suite</div>
-                                  </div>
-                                  <div class="col">
-                                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">User Interface
-                                          Design</div>
-                                  </div>
+                              <div id="skill-list" class="row row-cols-1 row-cols-md-3 mb-4">
+
+
                               </div>
                           </div>
 
@@ -52,3 +29,20 @@
           </div>
       </div>
   </div>
+  <script>
+      getSkills()
+
+      async function getSkills() {
+          let URL = '/skillsData';
+          try {
+              const response = await axios.get(URL);
+              response.data.forEach((element) => {
+                  document.getElementById('skill-list').innerHTML += (`  <div class="col mb-4 p-2 mb-md-0">
+                                      <div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">${element['name']}</div>
+                                  </div>`)
+              });
+          } catch (error) {
+              alert('error')
+          }
+      }
+  </script>
