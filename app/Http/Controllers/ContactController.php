@@ -12,11 +12,12 @@ class ContactController extends Controller
      */
     public function page(Request $request)
     {
-        return view('pages.contact');
+        $seo = DB::table('seoproperties')->where('pageName', '=', 'contacts')->first();
+        return view('pages.contacts', ['seo' => $seo]);
     }
     public function ContactRequest(Request $request)
     {
-       // sleep(5);
+        // sleep(5);
         return DB::table('contacts')->insert($request->input());
         // $contacts = DB::table('contacts')->get();
         // return $contacts;

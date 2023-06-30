@@ -11,8 +11,10 @@ class HomeController extends Controller
      * Display a listing of the resource.
      */
     public function page(Request $request)
+
     {
-        return view('pages.home');
+        $seo = DB::table('seoproperties')->where('pageName', '=', 'home')->first();
+        return view('pages.home', ['seo'=>$seo]);
     }
     public function heroData(Request $request)
     {
